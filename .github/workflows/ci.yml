@@ -38,12 +38,12 @@ jobs:
         - name: Install Dependencies
           run: npm install
         - run: |
-            npm run export
+            npm run build
         - name: Upload build artifact to Github
           uses: actions/upload-artifact@v1
           with:
             name: build-artifact
-            path: out/
+            path: build/
   deploy:
       name: Deploy
       runs-on: ubuntu-latest
