@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import styled from 'styled-components';
+import React, { useState } from 'react';
+import EnterThoughtComponent from './components/EnterThoughtComponent'
+import MatchedComponent from './components/MatchedComponent'
+import MatchingComponent from './components/MatchingComponent';
+import HeaderComponent from './components/HeaderComponent';
 
-function App() {
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100vh;
+`
+
+export default function App() {
+  const [thoughtText, setThoughtText] = useState('')
+  const [relatedThoughts, setRelatedThoughts] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <HeaderComponent />
+      <Router>
+        <Switch>
+
+          <Route path="/matching">
+            <MatchingComponent thoughtText={thoughtText} setRelatedThoughts={setRelatedThoughts} />
+          </Route>
+
+          <Route path="/matched">
+            <MatchedComponent relatedThoughts={relatedThoughts} />
+          </Route>
+
+          <Route path="/">
+            <EnterThoughtComponent key="enter-thought-component" setThoughtText={setThoughtText} />
+          </Route>
+          
+        </Switch>
+      </Router>
+    </AppContainer>
   );
 }
-
-export default App;
