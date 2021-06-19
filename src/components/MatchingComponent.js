@@ -21,7 +21,7 @@ const MatchingComponent = ({thoughtText, setRelatedThoughts}) => {
           setRelatedThoughts(data.data.thoughts); // Note that setting related thoughts re-renders the parent component
           history.push('/matched');
         });
-    }, []); // The empty array prevents re-rendering after setting the related thoughts
+    }, [history, setRelatedThoughts, thoughtText]); // The empty array prevents re-rendering after setting the related thoughts
   
     return (
       <MatchingComponentContainer>
