@@ -21,7 +21,7 @@ const SendThoughtButton = styled.button`
     height: 50px;
 `;
 
-const EnterThoughtComponent = ({setThoughtText}) => {
+const EnterThoughtComponent = ({thoughtText, setThoughtText}) => {
     let history = useHistory();
 
     const sendThought = () => {
@@ -32,7 +32,7 @@ const EnterThoughtComponent = ({setThoughtText}) => {
     <EnterThoughtForm key="enter-thought-form">
         <h1>What's on your mind?</h1>
         <ThoughtInput type="text" key="thought-input" onChange={(e) => setThoughtText(e.target.value)} />
-        <SendThoughtButton onClick={sendThought}>Send it!</SendThoughtButton>
+        <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()}>Send it!</SendThoughtButton>
     </EnterThoughtForm>
     )
 };

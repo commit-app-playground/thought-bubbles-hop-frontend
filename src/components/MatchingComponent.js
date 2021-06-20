@@ -4,6 +4,7 @@ import {
 import styled from 'styled-components';
 import React, { useEffect } from 'react';
 import { sendAndReceiveRelatedThoughts } from '../api';
+import { ClipLoader } from "react-spinners";
 
 const MatchingComponentContainer = styled.div`
     display: flex;
@@ -15,6 +16,10 @@ const MatchingComponent = ({thoughtText, setRelatedThoughts}) => {
     let history = useHistory();
   
     useEffect(() => {
+      if (!thoughtText) {
+        return;
+      }
+
       sendAndReceiveRelatedThoughts(thoughtText)
         .then((data) => {
           console.log(data);
@@ -26,6 +31,7 @@ const MatchingComponent = ({thoughtText, setRelatedThoughts}) => {
     return (
       <MatchingComponentContainer>
         <h1>Waiting for matches...</h1>
+        <ClipLoader color={'#000000'} loading={true} size={150} />
       </MatchingComponentContainer>
     )
 }

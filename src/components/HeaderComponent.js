@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const HeaderBar = styled.div`
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
+    padding: 5px;
+    border-bottom: 2px solid black;
 `
 
 const Title = styled.strong`

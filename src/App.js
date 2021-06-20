@@ -38,7 +38,7 @@ export default function App() {
           </Route>
 
           <Route path="/">
-            <EnterThoughtComponent key="enter-thought-component" setThoughtText={setThoughtText} />
+            <EnterThoughtComponent thoughtText={thoughtText} setThoughtText={setThoughtText} />
           </Route>
           
         </Switch>
