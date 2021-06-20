@@ -13,7 +13,7 @@ const MatchingComponentContainer = styled.div`
 `
 
 const MatchingComponent = ({thoughtText, setRelatedThoughts}) => {
-    let history = useHistory();
+    const history = useHistory();
   
     useEffect(() => {
       if (!thoughtText) {
@@ -26,7 +26,7 @@ const MatchingComponent = ({thoughtText, setRelatedThoughts}) => {
           setRelatedThoughts(data.data.thoughts); // Note that setting related thoughts re-renders the parent component
           history.push('/matched');
         });
-    }, [history, setRelatedThoughts, thoughtText]); // The empty array prevents re-rendering after setting the related thoughts
+    }, [history, setRelatedThoughts, thoughtText]);
   
     return (
       <MatchingComponentContainer>

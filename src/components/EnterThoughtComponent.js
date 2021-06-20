@@ -22,7 +22,7 @@ const SendThoughtButton = styled.button`
 `;
 
 const EnterThoughtComponent = ({thoughtText, setThoughtText}) => {
-    let history = useHistory();
+    const history = useHistory();
 
     const sendThought = () => {
         history.push('/matching');

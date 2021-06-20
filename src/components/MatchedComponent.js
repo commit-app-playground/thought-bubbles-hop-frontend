@@ -32,7 +32,7 @@ const ThoughtContent = styled.p`
 `
 
 const MatchedComponent = ({relatedThoughts}) => {
-    let history = useHistory();
+    const history = useHistory();
 
     const thoughtElements = relatedThoughts.map((thought, index) =>
       <ThoughtBox key={'thought-' + index}>
@@ -43,12 +43,10 @@ const MatchedComponent = ({relatedThoughts}) => {
     const restart = () => {
       history.push('/');
     }
-
-    const thoughtText = relatedThoughts.length === 1 ? 'thought' : 'thoughts';
   
     return (
       <MatchedComponentContainer>
-        <h1>Matched {relatedThoughts.length} {thoughtText}</h1>
+        <h1>Matched {relatedThoughts.length} {relatedThoughts.length === 1 ? 'thought' : 'thoughts'}</h1>
         <Carousel width={'700px'}>
           {thoughtElements}
         </Carousel>
