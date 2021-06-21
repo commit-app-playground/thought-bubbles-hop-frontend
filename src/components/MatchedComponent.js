@@ -51,8 +51,8 @@ const MatchedComponent = ({ relatedThoughts, setThoughtText }) => {
       </h1>
       {relatedThoughts.length === 0 && (
         <p>
-          (This means that no one has had a thought yet with the same emotion as
-          you, try again!)
+          (This means that no one has had a thought with the same emotion as you
+          yet, try again!)
         </p>
       )}
       {relatedThoughts.length >= 1 && (
