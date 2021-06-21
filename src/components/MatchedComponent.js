@@ -46,7 +46,7 @@ const MatchedComponent = ({ relatedThoughts, setThoughtText }) => {
   return (
     <MatchedComponentContainer>
       <h1>
-        Matched {relatedThoughts.length}{" "}
+        Matched {relatedThoughts.length} Similar{" "}
         {relatedThoughts.length === 1 ? "Thought" : "Thoughts"}
       </h1>
       {relatedThoughts.length === 0 && (
