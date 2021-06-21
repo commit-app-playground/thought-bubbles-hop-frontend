@@ -31,7 +31,7 @@ const ThoughtContent = styled.p`
   margin-right: 80px;
 `
 
-const MatchedComponent = ({relatedThoughts}) => {
+const MatchedComponent = ({relatedThoughts, setThoughtText}) => {
     const history = useHistory();
 
     const thoughtElements = relatedThoughts.map((thought, index) =>
@@ -41,6 +41,7 @@ const MatchedComponent = ({relatedThoughts}) => {
     );
   
     const restart = () => {
+      setThoughtText('');
       history.push('/');
     }
   

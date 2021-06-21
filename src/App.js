@@ -34,7 +34,7 @@ export default function App() {
           </Route>
 
           <Route path="/matched">
-            <MatchedComponent relatedThoughts={relatedThoughts} />
+            <MatchedComponent relatedThoughts={relatedThoughts} setThoughtText={setThoughtText} />
           </Route>
 
           <Route path="/">
