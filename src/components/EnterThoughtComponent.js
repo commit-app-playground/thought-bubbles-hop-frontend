@@ -1,41 +1,45 @@
-import {
-    useHistory
-  } from "react-router-dom";
-import styled from 'styled-components';
-import React from 'react';
+import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+import React from "react";
 
 const ThoughtInput = styled.textarea`
-    width: 550px;
-    height: 150px;
-    max-width: 80%;
+  width: 550px;
+  height: 150px;
+  max-width: 80%;
 `;
 
 const EnterThoughtForm = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const SendThoughtButton = styled.button`
-    margin-top: 20px;
-    width: 200px;
-    height: 50px;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
 `;
 
-const EnterThoughtComponent = ({thoughtText, setThoughtText}) => {
-    const history = useHistory();
+const EnterThoughtComponent = ({ thoughtText, setThoughtText }) => {
+  const history = useHistory();
 
-    const sendThought = () => {
-        history.push('/matching');
-    }
+  const sendThought = () => {
+    history.push("/matching");
+  };
 
-    return (
+  return (
     <EnterThoughtForm key="enter-thought-form">
-        <h1>What's on your mind?</h1>
-        <ThoughtInput type="text" key="thought-input" onChange={(e) => setThoughtText(e.target.value)} />
-        <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()}>Send it!</SendThoughtButton>
+      <h1>What's on your mind?</h1>
+      <ThoughtInput
+        type="text"
+        key="thought-input"
+        onChange={(e) => setThoughtText(e.target.value)}
+      />
+      <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()}>
+        Send it!
+      </SendThoughtButton>
     </EnterThoughtForm>
-    )
+  );
 };
 
-export default EnterThoughtComponent
+export default EnterThoughtComponent;
