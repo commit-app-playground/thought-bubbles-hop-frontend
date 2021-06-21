@@ -7,6 +7,7 @@ import React from 'react';
 const ThoughtInput = styled.textarea`
     width: 550px;
     height: 150px;
+    max-width: 80%;
 `;
 
 const EnterThoughtForm = styled.div`
