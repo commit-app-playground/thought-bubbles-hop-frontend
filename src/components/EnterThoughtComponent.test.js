@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import EnterThoughtComponent from './EnterThoughtComponent';
 
-test('should contain the form to enter a thought', () => {
+test('should contain all of the expected form elements', () => {
     render(<EnterThoughtComponent thoughtText={'test thought'} />);
 
     const titleElement = screen.getByText("What's on your mind?")
