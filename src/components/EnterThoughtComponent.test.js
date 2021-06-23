@@ -13,4 +13,3 @@ test('should contain the form to enter a thought', () => {
     const sendButton = screen.getByTestId('send-thought-button')
     expect(sendButton).toBeInTheDocument();
   });
-  

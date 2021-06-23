@@ -36,7 +36,7 @@ const EnterThoughtComponent = ({ thoughtText, setThoughtText }) => {
         key="thought-input"
         onChange={(e) => setThoughtText(e.target.value)}
       />
-      <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()} data-testid={"send-thought-button"}>
+      <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()} data-testid="send-thought-button">
         Send it!
       </SendThoughtButton>
     </EnterThoughtForm>
