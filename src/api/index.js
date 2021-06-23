@@ -12,6 +12,7 @@ const sendAndReceiveRelatedThoughts = (thought) => {
     data: {
       thoughtText: thought,
     },
+    withCredentials: true, // Allows CORS requests to set cookies
   });
 };
 
