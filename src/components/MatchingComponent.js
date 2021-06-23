@@ -19,7 +19,6 @@ const MatchingComponent = ({ thoughtText, setRelatedThoughts }) => {
     }
 
     sendAndReceiveRelatedThoughts(thoughtText).then((data) => {
-      console.log(data);
       setRelatedThoughts(data.data.thoughts); // Note that setting related thoughts re-renders the parent component
       history.push("/matched");
     });
