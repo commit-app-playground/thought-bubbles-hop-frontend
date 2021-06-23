@@ -32,10 +32,11 @@ const EnterThoughtComponent = ({ thoughtText, setThoughtText }) => {
       <h1>What's on your mind?</h1>
       <ThoughtInput
         type="text"
+        aria-label="thought-input"
         key="thought-input"
         onChange={(e) => setThoughtText(e.target.value)}
       />
-      <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()}>
+      <SendThoughtButton onClick={sendThought} disabled={!thoughtText.trim()} data-testid={"send-thought-button"}>
         Send it!
       </SendThoughtButton>
     </EnterThoughtForm>
